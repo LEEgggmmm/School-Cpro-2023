@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>메뉴가 2개인 웹페이지</title>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="http://www.naver.com">메뉴1</a></li>
+				<li><a href="#">메뉴2</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<h1>메인 콘텐츠</h1>
+		<p>이곳에 본문 내용을 작성하세요.</p>
+	</main>
+
+	<footer>
+		<p>저작권 © 2023 - 메뉴가 2개인 웹페이지</p>
+	</footer>
+
+	<script>
+		// 메뉴 클릭 시, 페이지 이동
+		const menuItems = document.querySelectorAll('nav ul li a');
+		menuItems.forEach(item => {
+			item.addEventListener('click', (event) => {
+				event.preventDefault(); // 기본 동작(페이지 이동) 막기
+				const page = event.target.getAttribute('href');
+				window.location.href = page;
+			});
+		});
+	</script>
+</body>
+</html>
